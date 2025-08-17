@@ -34,7 +34,7 @@ export default function App() {
     setStatus("⏳ Generating summary...");
 
     try {
-      const resp = await fetch("/api/generate", {
+      const resp = await fetch("https://ai-meetingsummarymaker.onrender.com/api/generate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ transcript, prompt }),
@@ -67,7 +67,7 @@ export default function App() {
     setStatus("📤 Sending email...");
 
     try {
-      const resp = await fetch("/api/share", {
+      const resp = await fetch("https://ai-meetingsummarymaker.onrender.com/api/share", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ summary, to }),
